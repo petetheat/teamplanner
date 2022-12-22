@@ -2022,3 +2022,31 @@ input, select, textarea {
 			}
 
 	}
+
+td.mon {
+	max-width: 50px;
+	min-width: 50px;
+	height: 50px;
+	vertical-align: top;
+}
+
+td.sat {
+	background-color: dimgray;
+	border-left: 2px;
+	border-color: red;
+	max-width: 50px;
+	min-width: 50px;
+	height: 50px;
+	vertical-align: top;
+}
+
+td.sun {
+	background-color: dimgray;
+	border-left: 2px;
+	border-color: red;
+	max-width: 50px;
+	min-width: 50px;
+	height: 50px;
+	vertical-align: top;
+	/*max-height: 50px;*/
+}

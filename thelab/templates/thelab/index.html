@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="{% static  'thelab/css/main.css' %}" />
 	</head>
 	<body>
+    {% block content %}
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -27,7 +28,7 @@
 								<!-- Nav -->
 									<nav id="nav">
 										<a href="{% url 'thelab:index' %}">Homepage</a>
-										<a href="{% url 'thelab:calendar' %}">View Team Calendar</a>
+										<a href="{% url 'thelab:calendar' year month %}">View Team Calendar</a>
 										<a href="">Update Calendar</a>
 									</nav>
 
@@ -41,7 +42,7 @@
 
 									<!-- Banner Copy -->
 										<p>The LAB: Flapping with success...</p>
-										<a href="{% url 'thelab:calendar' %}" class="button-large">View Team Calendar</a>
+										<a href="{% url 'thelab:calendar' year month %}" class="button-large">View Team Calendar</a>
 
 								</div>
 								<div class="col-6 col-12-medium imp-medium">
@@ -268,6 +269,6 @@
 			<script src="{% static 'thelab/js/breakpoints.min.js' %}"></script>
 			<script src="{% static 'thelab/js/util.js' %}"></script>
 			<script src="{% static 'thelab/js/main.js' %}"></script>
-
+    {% endblock %}
 	</body>
 </html>
