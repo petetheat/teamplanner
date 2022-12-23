@@ -2041,3 +2041,31 @@ td.sat, td.sun {
 	text-align: center;
 	vertical-align: top;
 }
+
+td.home {
+	background-color: #212f35;
+	color: #96a9b5;
+	text-align: center;
+}
+
+td.office {
+	background-color: #c6c8c8;
+	text-align: center;
+}
+
+td.vac {
+	background-color: #353D40;
+	color: #96a9b5;
+	text-align: center;
+}
+
+td.flex {
+	background-color: steelblue;
+	text-align: center;
+}
+
+td.pub {
+	background-color: firebrick;
+	text-align: center;
+	color: #a0a8ab;
+}

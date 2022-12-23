@@ -1,9 +1,17 @@
 import calendar
-from .models import TeamMember, Absence
+from .models import TeamMember, Absence, PublicHoliday
+import datetime
 
 
 WEEK_DAY_DICT = dict(zip(range(7), calendar.day_abbr))
 MONTHS_NAMES = list(calendar.month_name)
+ABSENCE_DICT = {
+    "HO": "home",
+    "O": "office",
+    "V": "vac",
+    "F": "flex",
+    "PL": "parental"
+}
 
 
 class Calendar:
@@ -39,9 +47,30 @@ class Calendar:
     def _format_team_member(self, team_member):
         html_output = '<tr>'
         html_output += f'<td>{team_member}</td>'
+
         for d in range(self.n_days):
             week_day = calendar.weekday(self.year, self.month, d+1)
-            html_output += f'<td class="{WEEK_DAY_DICT[week_day].lower()}"></td>'
+            date_check = datetime.date(self.year, self.month, d+1)
+
+            absence = Absence.objects.filter(teammember__initials=team_member,
+                                             starting_date__lte=date_check,
+                                             end_date__gte=date_check)
+
+            pub_holiday = PublicHoliday.objects.filter(date=date_check)
+            if len(pub_holiday) == 1:
+                html_output += f'<td class="pub">PH</td>'
+            else:
+                if len(absence) == 1:
+                    if WEEK_DAY_DICT[week_day] in ['Sat', 'Sun']:
+                        week_day_class = WEEK_DAY_DICT[week_day].lower()
+                        absence_type = ""
+                    else:
+                        week_day_class = ABSENCE_DICT[absence[0].absence_type]
+                        absence_type = absence[0].absence_type
+
+                    html_output += f'<td class="{week_day_class}">{absence_type}</td>'
+                else:
+                    html_output += f'<td class="{WEEK_DAY_DICT[week_day].lower()}"></td>'
         html_output += '</tr>'
 
         return html_output

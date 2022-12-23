@@ -25,3 +25,8 @@ class Absence(models.Model):
     starting_date = models.DateField()
     end_date = models.DateField()
     absence_type = models.CharField(choices=ABSENCE_CHOICES, max_length=200)
+
+
+class PublicHoliday(models.Model):
+    date = models.DateField()
+    name = models.CharField(max_length=200, blank=True)
