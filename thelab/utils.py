@@ -75,6 +75,20 @@ class Calendar:
 
         return html_output
 
+    def get_legend(self):
+        html_output = f'<table border="0" cellpadding="0" cellspacing="0" class="month"><tbody>'
+        html_output += f'<th colspan="2" class="legend">Legend</th>'
+
+        html_output += '<tr><td>Office</td><td class="office">O</td></tr>'
+        html_output += '<tr><td>Home Office</td><td class="home">HO</td></tr>'
+        html_output += '<tr><td>Vacation</td><td class="vac">V</td></tr>'
+        html_output += '<tr><td>Flex Time</td><td class="flex">F</td></tr>'
+        html_output += '<tr><td>Parental Leave</td><td class="parental">PL</td></tr>'
+        html_output += '<tr><td>Public Holiday</td><td class="pub">PH</td></tr>'
+        html_output += '<tr><td>Weekend</td><td class="sat"></td></tr>'
+        html_output += '</tbody></table>'
+        return html_output
+
 
 
 

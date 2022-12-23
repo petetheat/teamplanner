@@ -24,6 +24,7 @@ def calendar_view(request, year, month):
                     'month': month,
                     'year_next': year_next, 'month_next': month_next,
                     'year_prev': year_prev, 'month_prev': month_prev,
-                    'calendar': mycalendar.formatmonth()}
+                    'calendar': mycalendar.formatmonth(),
+                    'legend': mycalendar.get_legend()}
 
     return render(request, template_name, context_dict)

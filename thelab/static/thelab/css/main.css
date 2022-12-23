@@ -2069,3 +2069,9 @@ td.pub {
 	text-align: center;
 	color: #a0a8ab;
 }
+
+td.parental {
+	background-color: darkolivegreen;
+	color: #a0a8ab;
+	text-align: center;
+}
