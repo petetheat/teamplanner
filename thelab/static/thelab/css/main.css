@@ -2023,30 +2023,21 @@ input, select, textarea {
 
 	}
 
-td.mon {
-	max-width: 50px;
-	min-width: 50px;
-	height: 50px;
+td.mon, td.tue, td.wed, td.thu, td.fri  {
+	max-width: 30px;
+	min-width: 30px;
+	height: 30px;
 	vertical-align: top;
+	text-align: center;
 }
 
-td.sat {
-	background-color: dimgray;
+td.sat, td.sun {
+	background-color: #96a9b5;
 	border-left: 2px;
 	border-color: red;
-	max-width: 50px;
-	min-width: 50px;
-	height: 50px;
+	max-width: 30px;
+	min-width: 30px;
+	height: 30px;
+	text-align: center;
 	vertical-align: top;
-}
-
-td.sun {
-	background-color: dimgray;
-	border-left: 2px;
-	border-color: red;
-	max-width: 50px;
-	min-width: 50px;
-	height: 50px;
-	vertical-align: top;
-	/*max-height: 50px;*/
 }

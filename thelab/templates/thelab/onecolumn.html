@@ -46,9 +46,16 @@
 								<!-- Main Content -->
 									<section>
 										<header>
-											<h2>One Column</h2>
-											<h3>A generic one column layout</h3>
+											<h2>Team Calendar</h2>
+											<h3>See everyone's absences</h3>
 										</header>
+
+                                            <p style="text-align:left;">
+                                            <a href="{% url 'thelab:calendar' year_prev month_prev%}">Previous Month</a>
+                                            <span style="float:right;">
+                                                <a href="{% url 'thelab:calendar' year_next month_next%}">Next Month</a>
+                                            </span>
+                                            </p>
 
                                         {{ calendar|safe }}
 
